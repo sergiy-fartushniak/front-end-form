@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-form',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit(): void {
+
+  ngOnInit(): void {}
+  name = '';
+
+  inputHandler(event: any) {
+    this.name = event.target.value
+    console.log(this.name);
   }
-
 }

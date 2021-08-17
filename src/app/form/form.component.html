@@ -1,38 +1,81 @@
-<form >
-
-  <div class="input">
-    <label>
-      Name:
-      <input name="name" type="text">
-    </label>
-  </div>
-  <div class="input">
-    <label>
-      Surname:
-      <input name="surname" type="text">
-    </label>
-  </div>
-  <div class="input">
-    <label>
-      Birthday:
-      <input name="birthday" type="text">
-    </label>
-  </div>
-  <select name="" id="">
-    <option value="">Choose framework</option>
-    <option value="">Angular</option>
-    <option value="">Vue</option>
-    <option value="">React</option>
-  </select>
-  <select name="" id="">
-    <option value="">Choose version</option>
-
-  </select>
-  <div class="input">
-    <label>
-      Email:
-      <input type="email">
-    </label>
-  </div>
-  <button type="submit">Submit</button>
-</form>
+<div class="container">
+  <form>
+    <div class="input">
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input
+          matInput
+          required
+          name="firstName"
+          type="text"
+          (input)="inputHandler($event)"
+        >
+      </mat-form-field>
+    </div>
+    <div class="input">
+      <mat-form-field>
+        <mat-label>Surname</mat-label>
+        <input
+          matInput
+          name="lastName"
+          type="text"
+        >
+      </mat-form-field>
+    </div>
+     <div class="input">
+      <mat-form-field>
+        <mat-label>Birthday</mat-label>
+          <input
+            matInput
+            required
+            [matDatepicker]="picker"
+          >
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="input">
+      <mat-form-field appearance="fill">
+        <mat-label>Choose framework</mat-label>
+        <select matNativeControl required>
+          <option value="angular">Angular</option>
+          <option value="vue">Vue</option>
+          <option value="react">React</option>
+        </select>
+      </mat-form-field>
+    </div>
+    <div class="input">
+      <mat-form-field appearance="fill">
+        <mat-label>Choose version</mat-label>
+        <select matNativeControl required>
+          <option value="angular">1</option>
+          <option value="vue">2</option>
+          <option value="react">3</option>
+        </select>
+      </mat-form-field>
+    </div>
+    <div class="input">
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          required
+          type="email"
+          name="email"
+        >
+      </mat-form-field>
+    </div>
+    <div class="input">
+      <mat-form-field>
+        <mat-label>Hobbie</mat-label>
+        <input
+          matInput
+          required
+          type="text"
+          name="hobbie"
+        >
+      </mat-form-field>
+    </div>
+    <button type="submit" class="button">Submit</button>
+  </form>
+</div>
